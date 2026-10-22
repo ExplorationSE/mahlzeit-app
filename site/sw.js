@@ -1,4 +1,4 @@
-const C = 'mahlzeit-v2', SHELL = ['./', './index.html', './app.js', './manifest.webmanifest', './fonts/explorationse-mahlzeit.woff2', './icons/favicon-v1-32.png', './icons/favicon-v1-16.png', './icons/icon-v1-192.png', './icons/icon-v1-512.png', './icons/apple-touch-icon-v1.png'];
+const C = 'mahlzeit-v3', SHELL = ['./', './index.html', './app.js', './manifest.webmanifest', './fonts/explorationse-mahlzeit.woff2', './icons/favicon-v1-32.png', './icons/favicon-v1-16.png', './icons/icon-v1-192.png', './icons/icon-v1-512.png', './icons/apple-touch-icon-v1.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x.startsWith('mahlzeit-') && x !== C).map(x => caches.delete(x))))); self.clients.claim(); });
 self.addEventListener('fetch', e => {

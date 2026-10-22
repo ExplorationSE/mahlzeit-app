@@ -6,7 +6,7 @@ const PLACES = [
     noPrices: 'Preise stehen nicht auf der Wochenkarte.' },
   { id: 'speisemanufaktur', tab: 'Speise\u00admanufaktur', name: 'Speisemanufaktur Adlershof',
     info: [['Adresse', 'Johann-Hittorf-Str. 8 (im ZPV), 12489 Berlin'], ['Geöffnet', 'Mo–Fr 08:00–14:30 Uhr'], ['Mittag', '11:00–14:00 Uhr'], ['Bistro', 'Albert-Einstein-Str. 4, Mo–Do 07:00–15:00, Fr 07:00–14:30 Uhr']] },
-  { id: 'esswirtschaft', tab: 'ess\u00adwirtschaft', name: 'esswirtschaft (Forum Adlershof)',
+  { id: 'esswirtschaft', tab: 'Ess\u00adwirtschaft', name: 'Esswirtschaft (Forum Adlershof)',
     info: [['Adresse', 'Rudower Chaussee 39, 12489 Berlin'], ['Geöffnet', 'Mo–Fr 09:00–15:00 Uhr'], ['Warme Küche', '11:00–14:00 Uhr']],
     noPrices: 'Preise stehen nicht auf der Wochenkarte.' },
   { id: 'mensa', tab: 'Mensa Oase', name: 'Mensa HU Oase Adlershof',

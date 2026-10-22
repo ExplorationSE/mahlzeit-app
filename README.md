@@ -7,7 +7,7 @@ Geplante Adresse: https://explorationse.github.io/mahlzeit-app/
 |---|---|---|
 | **Kamee** (vorausgewählt) | https://www.kamee-caffe.de/ | HTML, Wochenkarte auf der Startseite (keine Preise; nur Barzahlung) |
 | **Speisemanufaktur** Adlershof | https://speisemanufaktur-adlershof.de/wochenkarte | PDF-Wochenkarte, Link wird jede Woche neu auf der Seite gesucht |
-| **esswirtschaft** | https://www.forum-esswirtschaft.de/wochenkarte/ | HTML-Tabelle (keine Preise) |
+| **Esswirtschaft** | https://www.forum-Esswirtschaft.de/wochenkarte/ | HTML-Tabelle (keine Preise) |
 | **Mensa HU Oase** | https://www.stw.berlin/mensen/einrichtungen/humboldt-universit%C3%A4t-zu-berlin/mensa-hu-oase-adlershof.html | strukturierte Daten (schema.org/Menu) mit rund zwei Wochen Vorschau, Preise für Studierende / Beschäftigte / Gäste |
 
 ## So funktioniert es
