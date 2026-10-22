@@ -64,7 +64,7 @@ function listHtml(items, grouped) {
   if (!grouped) return `<ul class="dishes">${items.map(i => dishHtml(i)).join('')}</ul>`;
   const groups = new Map();
   for (const i of items) { const g = i.group || 'Angebot'; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(i); }
-  const ORDER = ['Essen', 'Aktionen', 'Suppen', 'Vorspeisen', 'Salate', 'Beilagen', 'Desserts'], rank = g => (ORDER.indexOf(g) + 1) || 99;
+  const ORDER = ['Aktionen', 'Essen', 'Suppen', 'Vorspeisen', 'Salate', 'Beilagen', 'Desserts'], rank = g => (ORDER.indexOf(g) + 1) || 99;
   return [...groups].sort((a, b) => rank(a[0]) - rank(b[0])).map(([g, l]) => `<h3>${esc(g)}</h3><ul class="dishes">${l.map(i => dishHtml(i, true)).join('')}</ul>`).join('');
 }
 function sourceLink(p, d) {
