@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ExplorationSE Mahlzeit</title>
+<meta name="description" content="Tagesaktuelle Mittagsangebote in Berlin-Adlershof">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="SE Mahlzeit">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-v1-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="icons/favicon-v1-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-v1.png">
+<link rel="preload" href="fonts/explorationse-mahlzeit.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'ExplorationSE Mahlzeit Subset'; src: url(fonts/explorationse-mahlzeit.woff2) format('woff2'); font-display: swap; }
+:root { --bg:#000; --fg:#e6edf3; --mut:#8b949e; --dim:#6e7681; --line:#1c2128; --card:#0b0f14; --blue:#2a6f9f; --blue2:#14527c; --veg:#7ee787; --vegan:#3fb950; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); overflow: hidden; }
+body { font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left); -webkit-text-size-adjust: 100%; }
+a { color: #79b8e6; }
+header { padding: 10px 12px 6px; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+h1 { margin: 0; font: 400 20px/1.1 'ExplorationSE Mahlzeit Subset', Georgia, serif; letter-spacing: .02em; white-space: nowrap; }
+#datum { color: var(--mut); font-size: 13px; text-align: right; white-space: nowrap; }
+nav { display: flex; gap: 4px; padding: 0 8px 8px; border-bottom: 1px solid var(--line); }
+nav button { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 4px 3px; border: 1px solid #21262d; border-radius: 9px; background: #0d1117; color: var(--mut);
+  font: 600 12.5px/1.15 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; hyphens: manual; overflow-wrap: normal; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+nav button[aria-selected="true"] { background: linear-gradient(180deg, #0f2f4a, #071a2a); border-color: var(--blue); color: #fff; }
+nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 1px; }
+main { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 10px 12px 14px; overscroll-behavior: contain; }
+h2 { margin: 0 0 2px; font-size: 18px; font-weight: 650; }
+.sub { color: var(--mut); font-size: 13px; margin: 0 0 10px; }
+h3 { margin: 14px 0 6px; font-size: 12px; font-weight: 650; color: var(--mut); text-transform: uppercase; letter-spacing: .06em; }
+ul.dishes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.dish { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; }
+.row { display: flex; gap: 10px; align-items: baseline; }
+.name { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.price { flex: 0 0 auto; color: #c9d1d9; font-variant-numeric: tabular-nums; font-size: 14px; white-space: nowrap; }
+.price.long { white-space: normal; text-align: right; max-width: 42%; font-size: 13px; }
+.meta { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
+.tag { font-size: 11px; padding: 1px 6px; border-radius: 99px; border: 1px solid #30363d; color: var(--mut); }
+.tag.vegan { color: var(--vegan); border-color: #1f6f35; }
+.tag.vegetarisch { color: var(--veg); border-color: #2e5f36; }
+.lbl { font-size: 11px; color: #79b8e6; }
+.allerg { font-size: 11.5px; color: var(--dim); margin-top: 3px; }
+.note { background: #07121c; border: 1px solid #12324d; border-radius: 10px; padding: 12px; margin: 4px 0 8px; }
+.note p { margin: 0 0 6px; } .note p:last-child { margin: 0; }
+.warn { color: #d29922; font-size: 13px; margin: 0 0 8px; }
+dl.info { margin: 16px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; color: #c9d1d9; border-top: 1px solid var(--line); padding-top: 12px; }
+dl.info dt { color: var(--mut); } dl.info dd { margin: 0; overflow-wrap: anywhere; }
+.hint { font-size: 12px; color: var(--dim); margin: 8px 0 0; }
+@media (max-width: 340px) { nav { gap: 3px; padding: 0 6px 8px; } nav button { font-size: 11.5px; padding: 4px 2px; } h1 { font-size: 19px; } }
+footer { flex: 0 0 auto; padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); text-align: center; font-size: 10px; color: var(--dim); white-space: nowrap; overflow: hidden; }
+footer span { white-space: nowrap; }
+footer .brand { font-family: 'ExplorationSE Mahlzeit Subset', Georgia, serif; font-size: 11px; color: var(--mut); }
+footer a { color: var(--dim); }
+</style>
+</head>
+<body>
+<header><h1>ExplorationSE Mahlzeit</h1><div id="datum"></div></header>
+<nav role="tablist" aria-label="Lokale" id="tabs"></nav>
+<main id="panel" role="tabpanel" tabindex="-1"><p class="sub">Lade …</p></main>
+<footer><span class="brand">SE Mahlzeit</span> <span>© Stefan Eilers</span> · <span>Quellen: Lokale, StW Berlin</span> · <span>v0.1</span></footer>
+<script src="app.js" defer></script>
+</body>
+</html>

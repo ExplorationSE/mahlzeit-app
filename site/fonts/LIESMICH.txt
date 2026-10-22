@@ -1,0 +1,6 @@
+explorationse-mahlzeit.woff2 – Teilmenge (nur die Zeichen „ExplorationSE Mahlzeit“) der Schrift Marcellus
+von Brian J. Bonislawsky (Astigmatic), lizenziert unter der SIL Open Font License 1.1 (siehe OFL.txt).
+Da die Teilmenge eine veränderte Fassung ist, trägt sie gemäß OFL einen eigenen Namen („ExplorationSE Mahlzeit Subset“);
+der reservierte Schriftname „Marcellus“ wird für sie nicht verwendet.
+Erzeugt mit fontTools: pyftsubset Marcellus-Regular.ttf --text="ExplorationSE Mahlzeit" --flavor=woff2 --name-IDs='*' --name-legacy
+(anschließend Namenseinträge 1, 3, 4 und 6 auf „ExplorationSE Mahlzeit Subset“ umbenannt).

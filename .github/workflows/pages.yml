@@ -1,0 +1,43 @@
+name: Speisepläne holen & Seite veröffentlichen
+on:
+  push:
+    branches: [main]
+  schedule:
+    # GitHub rechnet in UTC. Ziel: Mo–Fr ca. 09:30 und 10:45 Uhr Berliner Zeit,
+    # je ein Eintrag für Sommerzeit (UTC+2) und Winterzeit (UTC+1); ein Lauf mehr schadet nicht.
+    - cron: '30 7,8 * * 1-5'
+    - cron: '45 8,9 * * 1-5'
+    # früher Morgenlauf (neue Wochenkarten) und Sonntagnachmittag (Pläne für die neue Woche)
+    - cron: '0 5 * * 1-5'
+    - cron: '0 16 * * 0'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: pdftotext für die PDF-Wochenkarte installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Speisepläne holen (Kamee, Speisemanufaktur, esswirtschaft, Mensa HU Oase)
+        # Schlägt eine Quelle fehl, bleibt deren letzter veröffentlichter Stand erhalten.
+        run: node scripts/fetch-menus.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
