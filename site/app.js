@@ -1,11 +1,11 @@
 'use strict';
 // ExplorationSE Mahlzeit – liest nur die vorab erzeugten JSON-Dateien in data/ (siehe scripts/fetch-menus.mjs)
 const PLACES = [
+  { id: 'speisemanufaktur', tab: 'Speise\u00admanufaktur', name: 'Speisemanufaktur Adlershof',
+    info: [['Adresse', 'Johann-Hittorf-Str. 8 (im ZPV), 12489 Berlin'], ['Geöffnet', 'Mo–Fr 08:00–14:30 Uhr'], ['Mittag', '11:00–14:00 Uhr'], ['Bistro', 'Albert-Einstein-Str. 4, Mo–Do 07:00–15:00, Fr 07:00–14:30 Uhr']] },
   { id: 'kamee', tab: 'Kamee', name: 'Kamee Caffè & Ess Bar',
     info: [['Adresse', 'Rudower Chaussee 25, 12489 Berlin'], ['Geöffnet', 'Mo–Fr 08:00–14:00 Uhr'], ['Mittag', 'ab 11:30 Uhr, solange der Vorrat reicht'], ['Bezahlung', 'nur Barzahlung'], ['Geschlossen', 'Sa, So und Feiertage']],
     noPrices: 'Preise stehen nicht auf der Wochenkarte.' },
-  { id: 'speisemanufaktur', tab: 'Speise\u00admanufaktur', name: 'Speisemanufaktur Adlershof',
-    info: [['Adresse', 'Johann-Hittorf-Str. 8 (im ZPV), 12489 Berlin'], ['Geöffnet', 'Mo–Fr 08:00–14:30 Uhr'], ['Mittag', '11:00–14:00 Uhr'], ['Bistro', 'Albert-Einstein-Str. 4, Mo–Do 07:00–15:00, Fr 07:00–14:30 Uhr']] },
   { id: 'esswirtschaft', tab: 'Ess\u00adwirtschaft', name: 'Esswirtschaft (Forum Adlershof)',
     info: [['Adresse', 'Rudower Chaussee 39, 12489 Berlin'], ['Geöffnet', 'Mo–Fr 09:00–15:00 Uhr'], ['Warme Küche', '11:00–14:00 Uhr']],
     noPrices: 'Preise stehen nicht auf der Wochenkarte.' },
@@ -112,12 +112,12 @@ async function render(id) {
 
 const nav = $('#tabs');
 nav.innerHTML = PLACES.map(p => `<button role="tab" type="button" data-id="${p.id}" aria-controls="panel" title="${esc(p.name)}">${esc(p.tab)}</button>`).join('');
-nav.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; history.replaceState(null, '', location.pathname + location.search + (b.dataset.id === 'kamee' ? '' : '#' + b.dataset.id)); render(b.dataset.id); });
+nav.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; history.replaceState(null, '', location.pathname + location.search + (b.dataset.id === 'speisemanufaktur' ? '' : '#' + b.dataset.id)); render(b.dataset.id); });
 nav.addEventListener('keydown', e => {
   if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
   const bs = [...nav.querySelectorAll('button')], i = bs.findIndex(b => b.getAttribute('aria-selected') === 'true');
   const n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; n.focus(); n.click();
 });
-addEventListener('hashchange', () => render(location.hash.slice(1) || 'kamee'));
-render(location.hash.slice(1) || 'kamee');
+addEventListener('hashchange', () => render(location.hash.slice(1) || 'speisemanufaktur'));
+render(location.hash.slice(1) || 'speisemanufaktur');
 if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) navigator.serviceWorker.register('sw.js').catch(() => {});
