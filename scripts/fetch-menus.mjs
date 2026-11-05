@@ -70,7 +70,7 @@ async function kamee() {
   const range = weekRange(lines[k]);
   const per = [[], [], [], [], []]; let cur = -1, empty = 0;
   for (const l of lines.slice(k + 1)) {
-    if (!l) { if (cur >= 0 && ++empty >= 4) break; continue; }
+    if (!l) { if (cur >= 4 && ++empty >= 4) break; continue; }
     empty = 0;
     const d = dayIndex(l);
     if (d >= 0 && l.length < 15) { cur = d; continue; }
