@@ -1,4 +1,4 @@
-# Erzeugt site/icon.svg für „ExplorationSE Mahlzeit“ (Text als Pfade, keine Schriftabhängigkeit):
+# Erzeugt site/icon.svg für „SE Mahlzeit“ (Text als Pfade, keine Schriftabhängigkeit):
 # „SE“ in Marcellus weiß, darunter dezent in Preußischblau Teller mit Gabel und Messer
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen

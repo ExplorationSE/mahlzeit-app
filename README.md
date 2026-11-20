@@ -1,7 +1,10 @@
-# ExplorationSE Mahlzeit
+# SE Mahlzeit
 
-Mobile Web-App (PWA) mit den heutigen Mittagsangeboten in Berlin-Adlershof, kurz „SE Mahlzeit“.
-Geplante Adresse: https://explorationse.github.io/mahlzeit-app/
+Mobile Web-App (PWA) mit den heutigen Mittagsangeboten in Berlin-Adlershof.
+
+Unabhängiges Projekt, weder mit den genannten Betrieben verbunden noch von ihnen unterstützt. Genannte Namen sind Marken ihrer Inhaber.
+
+Live: https://explorationse.github.io/mahlzeit-app/
 
 | Reiter | Quelle | Format |
 |---|---|---|

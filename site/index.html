@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ExplorationSE Mahlzeit</title>
+<title>SE Mahlzeit</title>
 <meta name="description" content="Tagesaktuelle Mittagsangebote in Berlin-Adlershof">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
@@ -55,17 +55,19 @@ dl.info { margin: 16px 0 0; display: grid; grid-template-columns: auto 1fr; gap:
 dl.info dt { color: var(--mut); } dl.info dd { margin: 0; overflow-wrap: anywhere; }
 .hint { font-size: 12px; color: var(--dim); margin: 8px 0 0; }
 @media (max-width: 340px) { nav { gap: 3px; padding: 0 6px 8px; } nav button { font-size: 11.5px; padding: 4px 2px; } h1 { font-size: 19px; } }
-footer { flex: 0 0 auto; padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); text-align: center; font-size: 10px; color: var(--dim); white-space: nowrap; overflow: hidden; }
+footer { flex: 0 0 auto; padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); text-align: center; font-size: 10px; color: var(--dim); }
+footer .legal { white-space: nowrap; overflow: hidden; }
 footer span { white-space: nowrap; }
 footer .brand { font-family: 'ExplorationSE Mahlzeit Subset', Georgia, serif; font-size: 11px; color: var(--mut); }
 footer a { color: var(--dim); }
+footer .indep { margin: 3px 6px 0; font-size: 9px; line-height: 1.25; white-space: normal; color: var(--dim); }
 </style>
 </head>
 <body>
-<header><h1>Mahlzeit</h1><div id="datum"></div></header>
+<header><h1>SE Mahlzeit</h1><div id="datum"></div></header>
 <nav role="tablist" aria-label="Lokale" id="tabs"></nav>
 <main id="panel" role="tabpanel" tabindex="-1"><p class="sub">Lade …</p></main>
-<footer><span class="brand">SE Mahlzeit</span> <span>© Stefan Eilers</span> · <span>Quellen: Lokale, StW Berlin</span> · <span>v0.1</span></footer>
+<footer><div class="legal"><span class="brand">SE Mahlzeit</span> <span>© Stefan Eilers</span> · <span>Quellen: Lokale, StW Berlin</span> · <span>v0.1</span></div><p class="indep">Unabhängiges Projekt, weder mit den genannten Betrieben verbunden noch von ihnen unterstützt. Genannte Namen sind Marken ihrer Inhaber.</p></footer>
 <script src="app.js" defer></script>
 </body>
 </html>

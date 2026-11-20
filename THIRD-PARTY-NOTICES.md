@@ -1,6 +1,6 @@
 # Hinweise zu Fremdbestandteilen
 
-Der eigene Code von ExplorationSE Mahlzeit (in der App kurz „SE Mahlzeit“), © 2026 Stefan Eilers, steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Es werden keine Bibliotheken und keine Schriften über ein CDN nachgeladen; die App selbst hat keine Abhängigkeiten.
+Der eigene Code von SE Mahlzeit, © 2026 Stefan Eilers, steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Es werden keine Bibliotheken und keine Schriften über ein CDN nachgeladen; die App selbst hat keine Abhängigkeiten.
 
 ## Mitgelieferte Schriften
 

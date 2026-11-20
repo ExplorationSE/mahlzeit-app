@@ -1,5 +1,12 @@
 # Änderungen
 
+## Unveröffentlicht – 20.11.2026
+
+- Name vereinheitlicht: Manifest-Name und Seitentitel jetzt „SE Mahlzeit“.
+- Unabhängigkeitshinweis in README und App ergänzt.
+- README: „Geplante Adresse“ durch die Live-Adresse ersetzt.
+- Service-Worker-Cache `mahlzeit-v8`.
+
 ## 0.1 – 22.10.2026
 
 Erste Fassung (nur lokal, noch nicht veröffentlicht).
